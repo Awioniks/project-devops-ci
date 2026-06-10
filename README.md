@@ -1,8 +1,8 @@
 ## Implementaion
 
-[] Project files (code files)
-[] Add simple GHA workflow and make sure it runs completion
-[] Add linting and format checks
+[x] Project files (code files)
+[x] Add simple GHA workflow and make sure it runs completion
+[x] Add linting (ruff) and format checks (black)
 [] Add typing and security checks
 [] Add test automation
 [] Build our Python project
