@@ -1,20 +1,31 @@
 import logging
 import click
 from .checker import check_urls
+from typing import Collection
 
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] %(levelname)-8s %(name)s: %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
+    datefmt="%Y-%m-%d %H:%M:%S",
 )
 
 logger = logging.getLogger(__name__)
 
+
 @click.command()
 @click.argument("urls", nargs=-1)
-@click.option("--timeout", default=5, help="Timeout for each URL check in seconds.")
-@click.option("--verbose", "-v", is_flag=True, help="Enable verbose logging.")
-def main(urls, timeout, verbose):
+@click.option(
+    "--timeout",
+    default=5,
+    help="Timeout for each URL check in seconds.",
+)
+@click.option(
+    "--verbose",
+    "-v",
+    is_flag=True,
+    help="Enable verbose logging.",
+)
+def main(urls: Collection[str], timeout: int, verbose: bool):
 
     if verbose:
         logging.getLogger().setLevel(logging.DEBUG)
@@ -25,7 +36,9 @@ def main(urls, timeout, verbose):
     logger.debug(f"Received verbose flag: {verbose}")
 
     if not urls:
-        logger.warning("No URLs provided. Please provide at least one URL to check.")
+        logger.warning(
+            "No URLs provided. Please provide at least one URL to check."
+        )
         click.echo("Usage: check-urls <URL1> <URL2> ...")
         return
 
@@ -37,5 +50,5 @@ def main(urls, timeout, verbose):
         if "OK" in status:
             fg_color = "green"
         else:
-            fg_color = "red"    
+            fg_color = "red"
         click.secho(f"{url:<40} -> {status}", fg=fg_color)

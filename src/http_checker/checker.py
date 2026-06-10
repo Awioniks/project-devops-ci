@@ -5,20 +5,25 @@ from typing import Collection
 
 logger = logging.getLogger(__name__)
 
-def check_urls(urls: Collection[str], timeout: int) -> dict[str, str]:
+
+def check_urls(
+    urls: Collection[str], timeout: int
+) -> dict[str, str]:
     """
     Check a list of URLs and return status.
 
     Args:
         urls: A list of URL strings to check.
         timeout: Maximum time in seconds to wait for each request.
-    
+
     Returns:
         A dictionary mapping each URL to its status.
     """
 
-    logger.info(f"Starting check for {len(urls)} URLs with a timeout {timeout}")
-    results = {}
+    logger.info(
+        f"Starting check for {len(urls)} URLs with a timeout {timeout}"
+    )
+    results: dict[str, str] = {}
 
     for url in urls:
         status = "UNKNOWN"
