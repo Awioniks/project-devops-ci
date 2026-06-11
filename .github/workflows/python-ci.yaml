@@ -29,7 +29,7 @@ jobs:
           black --check .
       - name: Static type checks
         run: |
-          mypy /src
+          mypy src/
       - name: Security checks
         run: |
           bandit -c pyproject.toml -r .
