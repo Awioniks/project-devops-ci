@@ -23,8 +23,7 @@ wheels/
 venv/
 env/
 ENV/
-src/http_checker.egg-info/PKG-INFO
-src/http_checker.egg-info/requires.txt
+src/http_checker.egg-info/*.
 
 # Environment variables
 .env
