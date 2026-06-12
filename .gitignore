@@ -1,0 +1,104 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+src/http_checker.egg-info/PKG-INFO
+src/http_checker.egg-info/requires.txt
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Linting
+.ruff_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Coverage reports
+coverage.xml
+
+# Build tools
+pip-wheel-metadata/
+
+# Python version managers
+.python-version
+
+# Documentation builds
+docs/_build/
+
+# Local test databases
+*.db
+*.sqlite3
+
+# Secrets and certificates
+*.pem
+*.key
+secrets/
+credentials/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Cache
+.cache/
+
+# Profiling
+.prof
+
+# PyInstaller
+*.manifest
+*.spec

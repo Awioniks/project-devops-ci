@@ -1,2 +1,0 @@
-[console_scripts]
-check-urls = http_checker.cli:main
