@@ -44,3 +44,34 @@ skips = ["B101"]
 
 [tool.pytest.ini_options]
 addopts = "-rA -s -v"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+build_command = "pip install build && python -m build"
+dist_path = "dist/"
+upload_to_pypi = false
+upload_to_release = true
+commit_message = "chore(release): {version} [skip ci]"
+
+[tool.semanctic_release.branches.master]
+match = "master"
+prerelease = false
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+
+[tools.semanctic_release.commit_parser_options]
+allowed_tags = [
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "style",
+    "reafactor",
+    "test"
+]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
