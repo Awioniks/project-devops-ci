@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.1.1 (2026-06-16)
+
+### Bug Fixes
+
+- **python-cicd**: Fix CI
+  ([`66488b7`](https://github.com/Awioniks/project-devops-ci/commit/66488b75877b9827d8046d92a4dc7656b8920382))
+
+
 ## v1.1.0 (2026-06-16)
 
 ### Bug Fixes
