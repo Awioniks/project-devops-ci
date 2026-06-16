@@ -2,7 +2,7 @@ name: CI/CD for http-checker
 
 on:
   push:
-    branches: ['main']
+    branches: ['master']
   workflow_dispatch:
 
 jobs:
@@ -66,7 +66,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_PAT }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -77,7 +76,7 @@ jobs:
           pip install python-semantic-release 
       - name: Create release
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           semantic-release version
           semantic-release publish -vv
