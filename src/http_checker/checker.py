@@ -53,5 +53,5 @@ def check_urls(
         results[url] = status
         logger.debug(f"Checked: {url:<40} -> {status}")
 
-    logger.info("URL check finished!")
+    logger.info("URL check finished.")
     return results
