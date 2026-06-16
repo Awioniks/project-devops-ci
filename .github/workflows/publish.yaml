@@ -46,6 +46,6 @@ jobs:
      - name: Publish to publish-testPyPI
        uses: pypa/gh-action-pypi-publish@release/v1
        with:
-        respository-url: https://test.pypi.org/legacy
+        repository-url: https://test.pypi.org/legacy
         skip-existing: true
         verbose: true
