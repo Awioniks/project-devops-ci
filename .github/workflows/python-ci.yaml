@@ -3,7 +3,6 @@ name: CI/CD for http-checker
 on:
   push:
     branches: ['master']
-  workflow_dispatch:
 
 jobs:
   lint-static-checks:
