@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-06-16)
+
+### Bug Fixes
+
+- **fix-typo**: Fix typo
+  ([`86e132f`](https://github.com/Awioniks/project-devops-ci/commit/86e132fc414304fd52d652e3fe0d9f163ce7cb0c))
+
+- **python-cicd**: Fix CI
+  ([`b41506e`](https://github.com/Awioniks/project-devops-ci/commit/b41506ea3e9eebcb95264d764e95a1b826155494))
+
+- **python-cicd**: Fix CI
+  ([`66488b7`](https://github.com/Awioniks/project-devops-ci/commit/66488b75877b9827d8046d92a4dc7656b8920382))
+
+### Features
+
+- **Code update**: Code update
+  ([`8b7899f`](https://github.com/Awioniks/project-devops-ci/commit/8b7899fc26c9be3f29540bf9b988152d3ac985bc))
+
+
 ## v1.1.0 (2026-06-16)
 
 ### Bug Fixes
