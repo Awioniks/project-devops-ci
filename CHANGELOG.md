@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.0 (2026-06-16)
+
+### Features
+
+- **Code update**: Code update
+  ([`9b56ac7`](https://github.com/Awioniks/project-devops-ci/commit/9b56ac7f381dab66ee9323d8e614d0c9b5ba90f2))
+
+
 ## v1.4.0 (2026-06-16)
 
 ### Features
