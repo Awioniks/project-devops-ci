@@ -26,7 +26,7 @@ jobs:
         run: |
           python -m build
       - name: Upload build artifacts
-        uses: actions/upload-artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
           name: http-checker-${{ github.sha }}
           path: dist/
@@ -38,14 +38,14 @@ jobs:
       id-token: write
       contents: read
     steps:
-     - name: Download build artifacts
-       uses: actions/download-artifact@v4
-       with:
-         name: http-checker-${{ github.sha }}
-         path: dist/
-     - name: Publish to publish-testPyPI
-       uses: pypa/gh-action-pypi-publish@release/v1
-       with:
-        repository-url: https://test.pypi.org/legacy
-        skip-existing: true
-        verbose: true
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: http-checker-${{ github.sha }}
+          path: dist/
+      - name: Publish to publish-testPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy
+          skip-existing: true
+          verbose: true
