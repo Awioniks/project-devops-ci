@@ -2,13 +2,14 @@ name: Publish to PyPI
 
 on:
   release:
-    types: [published, created]
+    types: [published]
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag to publish"
+        description: 'Release tag to publish'
         required: true
         type: string
+
 jobs:
   publish-testpypi:
     runs-on: ubuntu-latest
@@ -20,16 +21,16 @@ jobs:
       - name: Download wheel artifact
         uses: robinraju/release-downloader@v1.12
         with:
-          repository: ${{ github.respository }}
+          repository: ${{ github.repository }}
           tag: ${{ github.event.release.tag_name || github.event.inputs.tag }}
-          fileName: "*.whl"
+          fileName: '*.whl'
           out-file-path: dist/
       - name: Download tarball artifact
         uses: robinraju/release-downloader@v1.12
         with:
-          repository: ${{ github.respository }}
+          repository: ${{ github.repository }}
           tag: ${{ github.event.release.tag_name || github.event.inputs.tag }}
-          fileName: "*.tar.gz"
+          fileName: '*.tar.gz'
           out-file-path: dist/
       - name: Publish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
@@ -45,11 +46,20 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
+      - name: Download wheel artifact
+        uses: robinraju/release-downloader@v1.12
         with:
-          name: http-checker-${{ github.sha }}
-          path: dist/
+          repository: ${{ github.repository }}
+          tag: ${{ github.event.release.tag_name || github.event.inputs.tag }}
+          fileName: '*.whl'
+          out-file-path: dist/
+      - name: Download tarball artifact
+        uses: robinraju/release-downloader@v1.12
+        with:
+          repository: ${{ github.repository }}
+          tag: ${{ github.event.release.tag_name || github.event.inputs.tag }}
+          fileName: '*.tar.gz'
+          out-file-path: dist/
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
